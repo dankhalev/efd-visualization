@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_desktop" default="compile.module.desktop">
+  <dirname property="module.desktop.basedir" file="${ant.file.module_desktop}"/>
+  
+  
+  <property name="compiler.args.desktop" value="-encoding UTF-8 -source 1.6 -target 1.6 ${compiler.args}"/>
+  
+  <property name="desktop.output.dir" value="${module.desktop.basedir}/../out/production/desktop"/>
+  <property name="desktop.testoutput.dir" value="${module.desktop.basedir}/../out/test/desktop"/>
+  
+  <path id="desktop.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="desktop.module.production.classpath">
+    <pathelement location="${core.output.dir}"/>
+    <pathelement location="${basedir}/libs/gdx-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/gdx-box2d-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/gdx-backend-lwjgl-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/jinput-2.0.5.jar"/>
+    <pathelement location="${basedir}/libs/jlayer-1.0.1-gdx.jar"/>
+    <pathelement location="${basedir}/libs/jorbis-0.0.17.jar"/>
+    <pathelement location="${basedir}/libs/jutils-1.0.0.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl-2.9.2.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl_util-2.9.2.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl-platform-2.9.2-natives-windows.jar"/>
+    <pathelement location="${basedir}/libs/jinput-platform-2.0.5-natives-windows.jar"/>
+    <pathelement location="${basedir}/libs/gdx-platform-1.9.4-natives-desktop.jar"/>
+    <pathelement location="${basedir}/libs/gdx-box2d-platform-1.9.4-natives-desktop.jar"/>
+  </path>
+  
+  <path id="desktop.runtime.production.module.classpath">
+    <pathelement location="${desktop.output.dir}"/>
+    <path refid="core.runtime.production.module.classpath"/>
+    <pathelement location="${basedir}/libs/gdx-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/gdx-box2d-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/gdx-backend-lwjgl-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/jinput-2.0.5.jar"/>
+    <pathelement location="${basedir}/libs/jlayer-1.0.1-gdx.jar"/>
+    <pathelement location="${basedir}/libs/jorbis-0.0.17.jar"/>
+    <pathelement location="${basedir}/libs/jutils-1.0.0.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl-2.9.2.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl_util-2.9.2.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl-platform-2.9.2-natives-windows.jar"/>
+    <pathelement location="${basedir}/libs/jinput-platform-2.0.5-natives-windows.jar"/>
+    <pathelement location="${basedir}/libs/gdx-platform-1.9.4-natives-desktop.jar"/>
+    <pathelement location="${basedir}/libs/gdx-box2d-platform-1.9.4-natives-desktop.jar"/>
+  </path>
+  
+  <path id="desktop.module.classpath">
+    <pathelement location="${desktop.output.dir}"/>
+    <pathelement location="${core.testoutput.dir}"/>
+    <pathelement location="${core.output.dir}"/>
+    <pathelement location="${basedir}/libs/gdx-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/gdx-box2d-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/gdx-backend-lwjgl-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/jinput-2.0.5.jar"/>
+    <pathelement location="${basedir}/libs/jlayer-1.0.1-gdx.jar"/>
+    <pathelement location="${basedir}/libs/jorbis-0.0.17.jar"/>
+    <pathelement location="${basedir}/libs/jutils-1.0.0.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl-2.9.2.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl_util-2.9.2.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl-platform-2.9.2-natives-windows.jar"/>
+    <pathelement location="${basedir}/libs/jinput-platform-2.0.5-natives-windows.jar"/>
+    <pathelement location="${basedir}/libs/gdx-platform-1.9.4-natives-desktop.jar"/>
+    <pathelement location="${basedir}/libs/gdx-box2d-platform-1.9.4-natives-desktop.jar"/>
+  </path>
+  
+  <path id="desktop.runtime.module.classpath">
+    <pathelement location="${desktop.testoutput.dir}"/>
+    <pathelement location="${desktop.output.dir}"/>
+    <path refid="core.runtime.module.classpath"/>
+    <pathelement location="${basedir}/libs/gdx-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/gdx-box2d-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/gdx-backend-lwjgl-1.9.4.jar"/>
+    <pathelement location="${basedir}/libs/jinput-2.0.5.jar"/>
+    <pathelement location="${basedir}/libs/jlayer-1.0.1-gdx.jar"/>
+    <pathelement location="${basedir}/libs/jorbis-0.0.17.jar"/>
+    <pathelement location="${basedir}/libs/jutils-1.0.0.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl-2.9.2.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl_util-2.9.2.jar"/>
+    <pathelement location="${basedir}/libs/lwjgl-platform-2.9.2-natives-windows.jar"/>
+    <pathelement location="${basedir}/libs/jinput-platform-2.0.5-natives-windows.jar"/>
+    <pathelement location="${basedir}/libs/gdx-platform-1.9.4-natives-desktop.jar"/>
+    <pathelement location="${basedir}/libs/gdx-box2d-platform-1.9.4-natives-desktop.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.desktop">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.desktop">
+    <patternset refid="excluded.from.module.desktop"/>
+  </patternset>
+  
+  <path id="desktop.module.sourcepath">
+    <dirset dir="${module.desktop.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.desktop" depends="compile.module.desktop.production,compile.module.desktop.tests" description="Compile module desktop"/>
+  
+  <target name="compile.module.desktop.production" depends="compile.module.core" description="Compile module desktop; production classes">
+    <mkdir dir="${desktop.output.dir}"/>
+    <javac destdir="${desktop.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true">
+      <compilerarg line="${compiler.args.desktop}"/>
+      <bootclasspath refid="desktop.module.bootclasspath"/>
+      <classpath refid="desktop.module.production.classpath"/>
+      <src refid="desktop.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.desktop"/>
+    </javac>
+    
+    <copy todir="${desktop.output.dir}">
+      <fileset dir="${module.desktop.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.desktop.tests" depends="compile.module.desktop.production" description="compile module desktop; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.desktop" description="cleanup module">
+    <delete dir="${desktop.output.dir}"/>
+    <delete dir="${desktop.testoutput.dir}"/>
+  </target>
+</project>

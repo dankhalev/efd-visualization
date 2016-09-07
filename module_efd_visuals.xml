@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_efd_visuals" default="compile.module.efd_visuals">
+  <dirname property="module.efd_visuals.basedir" file="${ant.file.module_efd_visuals}"/>
+  
+  
+  <property name="compiler.args.efd_visuals" value="-encoding UTF-8 -source 1.6 -target 1.6 ${compiler.args}"/>
+  
+  <property name="efd_visuals.output.dir" value="${module.efd_visuals.basedir}/out/production/EfD Visuals"/>
+  <property name="efd_visuals.testoutput.dir" value="${module.efd_visuals.basedir}/out/test/EfD Visuals"/>
+  
+  <path id="efd_visuals.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="efd_visuals.module.production.classpath"/>
+  
+  <path id="efd_visuals.runtime.production.module.classpath">
+    <pathelement location="${efd_visuals.output.dir}"/>
+  </path>
+  
+  <path id="efd_visuals.module.classpath">
+    <pathelement location="${efd_visuals.output.dir}"/>
+  </path>
+  
+  <path id="efd_visuals.runtime.module.classpath">
+    <pathelement location="${efd_visuals.testoutput.dir}"/>
+    <pathelement location="${efd_visuals.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.efd_visuals">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.efd_visuals">
+    <patternset refid="excluded.from.module.efd_visuals"/>
+  </patternset>
+  
+  
+  <target name="compile.module.efd_visuals" depends="compile.module.efd_visuals.production,compile.module.efd_visuals.tests" description="Compile module EfD Visuals"/>
+  
+  <target name="compile.module.efd_visuals.production" description="Compile module EfD Visuals; production classes"/>
+  
+  <target name="compile.module.efd_visuals.tests" depends="compile.module.efd_visuals.production" description="compile module EfD Visuals; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.efd_visuals" description="cleanup module">
+    <delete dir="${efd_visuals.output.dir}"/>
+    <delete dir="${efd_visuals.testoutput.dir}"/>
+  </target>
+</project>
