@@ -2,7 +2,7 @@
 <project name="efd_visuals" default="all">
   
   
-  
+
   <!-- Uncomment the following property if no tests compilation is needed -->
   <!-- 
   <property name="skip.tests" value="true"/>
@@ -76,6 +76,7 @@
   <target name="run" depends="all" description="Executes program">
     <java fork="true" classname="com.khalev.efd.visuals.desktop.DesktopLauncher">
       <arg value="${arg0}"/>
+      <arg value="${arg1}"/>
       <classpath refid="desktop.module.classpath"/>
     </java>
   </target>
