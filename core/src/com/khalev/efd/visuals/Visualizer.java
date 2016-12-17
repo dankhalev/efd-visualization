@@ -32,11 +32,9 @@ public class Visualizer extends ApplicationAdapter {
 		this.map = map;
 		try {
 			this.logs = new BufferedReader(new FileReader(f));
-			this.sizeX = Integer.parseInt(logs.readLine());
-			this.sizeY = Integer.parseInt(logs.readLine());
-			if (sizeX != map.getWidth() || sizeY != map.getHeight()) {
-				throw new RuntimeException();
-			}
+			logs.readLine();
+			this.sizeX = map.getWidth();
+			this.sizeY = map.getHeight();
 
 			Thread t = new Thread (new Runnable() {
 				@Override

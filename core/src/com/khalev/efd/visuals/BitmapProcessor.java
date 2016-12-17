@@ -12,12 +12,8 @@ public class BitmapProcessor {
 
     BufferedImage img;
 
-    public EnvironmentMap readBitmap(File bitmap) {
-        try {
-            img = ImageIO.read(bitmap);
-        } catch (IOException e) {
-
-        }
+    public EnvironmentMap readBitmap(File bitmap) throws IOException {
+        img = ImageIO.read(bitmap);
         int sizeY = img.getHeight();
         int sizeX = img.getWidth();
         EnvironmentMap map = new EnvironmentMap(sizeX, sizeY);
